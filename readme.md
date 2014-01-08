@@ -1,6 +1,6 @@
 #shorterBreadcrumb 0.1 stable 
 
-##Erweitert die das Breadcrumb-Modul vom Contao-Core
+##Erweitert das Breadcrumb-Modul vom Contao-Core
 Mit der installation wird der breadcrumb -erweiterung "shorterBreadcrumb"
 als template "mod_breadcrumb_shortname" zugewiesen.
 
