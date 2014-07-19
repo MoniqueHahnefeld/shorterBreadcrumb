@@ -1,6 +1,3 @@
-<?php // shortbreadcrumb mit abfrage der Headline CSS class  ?>
-
-
 <!-- indexer::stop -->
 <div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?>
 	<?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
@@ -9,7 +6,7 @@
     <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
   <?php endif; ?>
 
-  <ul>  
+  <ul> 
     <?php 
     $count = 0; 
  
@@ -22,7 +19,6 @@
 	$is_active_next = $this->items[$count+1]['isActive'];
     $article_title = $this->items[$count+1]['title'];
     $article_title_same = (trim($item['title']) != trim($article_title));
-  	$is_headlines = (preg_match("/headline/", $this->items[$count]['data']['cssClass'])); 
   	$is_root =  (preg_match("/root/", $this->items[$count]['data']['cssClass'])); 
   	//echo $item['title'].' -1'.$is_hide_in_nav_next .'&&'. $is_active_next.'<br>';
 //echo 'next is article:'.$is_article_next .' title:'.$item['title'].'  title next:'.$article_title .'<br>';  
@@ -30,10 +26,9 @@
 	if(!$is_hide_in_nav){
    if($article_title_same){
     	 
-      if ($item['isActive']  || $is_headlines ): 
+      if ($item['isActive']): 
         echo '<li class="';
        if ($item['isActive']){echo 'active ';}
-	   if ($is_headlines){echo 'headline ';}
         if ($item['class']):
           echo $item['class'];
          endif; //last?
@@ -46,7 +41,7 @@
         if ($item['isActive']){
          echo '</span></li>';
         }else{
-       if($is_hide_in_nav_next && $is_active_next) {}else{echo '[nbsp][gt]';}
+       if($is_hide_in_nav_next && $is_active_next) {}else{echo '[nbsp]»[nbsp]';}
          echo '</span></li>';
         }
         else:
@@ -62,7 +57,7 @@
         	echo $item['link'];     	
         	}else{     	
         	echo $item['data']['shortName'];}
-         if($is_hide_in_nav_next && $is_active_next) {}else{echo '[nbsp][gt]';}
+         if($is_hide_in_nav_next && $is_active_next) {}else{echo '[nbsp]»[nbsp]';}
          echo '</a></li>';
         
      endif;

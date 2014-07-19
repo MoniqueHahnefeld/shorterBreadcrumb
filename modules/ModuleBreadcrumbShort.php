@@ -26,10 +26,32 @@
  * @author     Monique Hahnefeld
  * @license    LGPL 
  */
- 
-$GLOBALS['TL_LANG']['tl_page']['shortName'][0] = 'Name Kurz';
-$GLOBALS['TL_LANG']['tl_page']['shortName'][1] = 'Geben Sie hier einen kurzen Namen für die Seite an. Beschreiben Sie die Seite am besten mit einem Wort.';
 
-$GLOBALS['TL_LANG']['FMD']['breadcrumb'][0] = 'Kurze Brotkrumennavigation';
+class ModuleBreadcrumbShort extends \ModuleBreadcrumb
+{	
+	protected $strTemplate = 'mod_breadcrumb_shortname'; 
+	 
+	public function generate()
+	{
+		if (TL_MODE == 'BE')
+		 {
+			$objTemplate = new \BackendTemplate('be_wildcard');
+
+			$objTemplate->wildcard = '### ' . utf8_strtoupper($GLOBALS['TL_LANG']['FMD']['breadcrumb'][0]) . ' ###';
+			$objTemplate->title = $this->headline;
+			$objTemplate->id = $this->id;
+			$objTemplate->link = $this->name;
+			$objTemplate->href = 'contao/main.php?do=themes&amp;table=tl_module&amp;act=edit&amp;id=' . $this->id;
+		 
+			return $objTemplate->parse();
+			
+		}
+
+		return parent::generate();
+	}
+
+	
+
+}
 
 ?>

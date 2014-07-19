@@ -1,9 +1,31 @@
 <?php 
-  // 'palettes' => array 
-    // ( 
-        // '__selector__'                => array(''), 
-        // 'default'                     => '' 
-    // ), 
+/**
+ * Contao Open Source CMS
+ * Copyright (C) 2005-2013 Leo Feyer
+ *
+ * Formerly known as TYPOlight Open Source CMS.
+ *
+ * This program is free software: you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation, either
+ * version 3 of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this program. If not, please visit the Free
+ * Software Foundation website at <http://www.gnu.org/licenses/>.
+ *
+ * PHP version 5
+ * @package    shorterBreadcrumb
+ * @copyright  Monique Hahnefeld 2013
+ * @author     Monique Hahnefeld
+ * @license    LGPL 
+ */
+ 
 //Anzeige im Backend
 
 foreach($GLOBALS['TL_DCA']['tl_page']['palettes'] as $k => $v) 
@@ -16,8 +38,6 @@ foreach($GLOBALS['TL_DCA']['tl_page']['palettes'] as $k => $v)
       ); 
 } 
 
-//$GLOBALS['TL_DCA']['tl_page']['palettes']['default'] = str_replace('title,','title,shortName', $GLOBALS['TL_DCA']['tl_page']['palettes']['default']);
- 
 //Beschreibung des Feldes
 $GLOBALS['TL_DCA']['tl_page']['fields']['shortName'] = array
 (
@@ -27,10 +47,11 @@ $GLOBALS['TL_DCA']['tl_page']['fields']['shortName'] = array
 			'exclude'                 => false,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>false, 'maxlength'=>64,'tl_class'=>'w50'),
+			'eval'                    => array('maxlength'=>64,'tl_class'=>'w50'),
 			'sql'                     => "varchar(64) NOT NULL default ''"
 
 );
+
 $GLOBALS['TL_DCA']['tl_page']['fields']['title']['eval']['tl_class']= 'w50';
 
 

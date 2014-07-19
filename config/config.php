@@ -21,6 +21,7 @@
  * Software Foundation website at <http://www.gnu.org/licenses/>.
  *
  * PHP version 5
+ * @package    shorterBreadcrumb
  * @copyright  Monique Hahnefeld 2013
  * @author     Monique Hahnefeld
  * @license    LGPL 
@@ -30,8 +31,9 @@
  * Front end modules
  */
 
-$GLOBALS['FE_MOD']['navigationMenu']['breadcrumb'] = 'breadcrumbShort';
-//$GLOBALS['FE_MOD']['navigationMenu']['navigation'] = ModuleMeineUeberschriebeneNavigationKlasse
+$GLOBALS['FE_MOD']['navigationMenu']['breadcrumb'] = 'ModuleBreadcrumbShort';
+
+  
 
 
 ?>
