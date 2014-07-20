@@ -1,7 +1,7 @@
 #shorterBreadcrumb 0.1 stable 
 
 ##Erweitert das Breadcrumb-Modul vom Contao-Core
-Mit der installation wird der breadcrumb -erweiterung "shorterBreadcrumb"
+Mit der Installation dieser Erweiterung "shorterBreadcrumb" wird dem Breadcrumb-Modul
 als template "mod_breadcrumb_shortname" zugewiesen.
 
 In den Seiteneinstellungen ist ein zusätzliches Feld für einen kurzen Seitentitel
